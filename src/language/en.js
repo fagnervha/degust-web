@@ -1253,8 +1253,7 @@ export const english = {
 	Summary: "Summary",
 	"No delivery man assigned": "No delivery man assigned",
 	"Highlights for you": "Highlights for you",
-	"See our most popular restaurant and foods":
-		"See our most popular store and items",
+	"See our most popular restaurant and foods": "See our most popular store and items",
 	"delivery man info": "delivery man info",
 	"seller info": "seller info",
 	"order-summary": "order-summary",
