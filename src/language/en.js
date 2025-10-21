@@ -357,7 +357,7 @@ export const english = {
 	"Last name is required": "Last name is required",
 	"Address Form": "Address Form",
 	"items selected": "items selected",
-
+"First name":"First name",
 	"Image Format - JPG, Pong, ZPEG, GIF Image Size - Maximum Size 2Mb Image Ratio - 1: 1":
 		"Image Format - JPG, Pong, ZPEG, GIF Image Size - Maximum Size 2Mb Image Ratio - 1: 1",
 
@@ -592,7 +592,7 @@ export const english = {
 	"Terms & Conditions": "Terms & Conditions",
 	"Privacy Policy": "Privacy Policy",
 	"Quick Links": "Quick Links",
-	"Contact Us": "Contact Us",
+	"Contact us": "Contact Us",
 	"About Us": "About Us",
 	" Loyalty Points": " Loyalty Points",
 	"Only for First Order": "Only for First Order",
@@ -1253,7 +1253,8 @@ export const english = {
 	Summary: "Summary",
 	"No delivery man assigned": "No delivery man assigned",
 	"Highlights for you": "Highlights for you",
-	"See our most popular restaurant and foods": "See our most popular store and items",
+	"See our most popular restaurant and foods":
+		"See our most popular store and items",
 	"delivery man info": "delivery man info",
 	"seller info": "seller info",
 	"order-summary": "order-summary",
@@ -1380,5 +1381,30 @@ export const english = {
 	"Forgot your password":"Forgot your password",
 	"Please enter the registered":"Please enter the registered",
 	"where you want to sent your password recovery OTP.":"where you want to sent your password recovery OTP.",
-	"Note:":"Note:"
+	"Note:":"Note:",
+	"Please select cancellation reason":"Please select cancellation reason",
+	"Deliveryman Application":"Deliveryman Application",
+	"User Info":"User Info",
+	"Identity Info":"Identity Info",
+	"Account Info":"Account Info",
+	'Last name':"Last name",
+	"Deliveryman Type":"Deliveryman Type",
+	"Select Zone":"Select Zone",
+	"Select Vehicle Type":'Select Vehicle Type',
+	"Profile Image":"Profile Image",
+	"Submit Information":"Submit Information",
+	"discount will be applicable when  order amount exceeds is more than":"discount will be applicable when  order amount exceeds is more than",
+	"max":"max",
+	"discount is applicable.":"discount is applicable.",
+	"Recommended Store":"Recommended Store",
+	"Top offers near me":"Top offers near me",
+	"Select Payment Method":"Select Payment Method",
+	"* By login I Agree with all the":"* By login I Agree with all the",
+	"Return fee":"Return fee",
+	"Grand Total Amount":"Grand Total Amount",
+	"You will  pay return fee":"You will  pay return fee",
+
+
+
+
 };
