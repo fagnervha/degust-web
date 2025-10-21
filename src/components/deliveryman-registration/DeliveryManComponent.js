@@ -79,7 +79,7 @@ const DeliveryManComponent = ({ configData }) => {
     <>
       <TitleTopSection>
         <H1
-          text={t("Deliveryman Application")}
+          text={"Deliveryman Application"}
           sx={{
             fontWeight: "700",
             fontSize: { xs: "26px", md: "36px" },

@@ -39,16 +39,29 @@ const Grocery = (props) => {
     data: visitedStores,
     refetch: refetchVisitAgain,
     isFetching: visitIsFetching,
-    isLoading:visitIsLoading
   } = useGetVisitAgain();
   const {
     data: newStore,
     refetch: newStoreRefetch,
     isFetching,
-    isLoading:newStoreIsLoading
   } = useGetNewArrivalStores({
     type: "all",
   });
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        await refetch();
+        if (token) {
+          await refetchVisitAgain();
+        }
+        newStoreRefetch();
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, [token]);
   useEffect(() => {
     if (visitedStores?.length > 0 || newStore?.stores?.length > 0) {
       if (visitedStores?.length > 0 && visitedStores) {
@@ -82,9 +95,6 @@ const Grocery = (props) => {
                     configData={configData}
                     isVisited={isVisited}
                     visitedStores={storeData}
-                    isLoading={visitIsLoading || newStoreIsLoading}
-                    
-
                 />
             ) : (
                 <CustomContainer>
@@ -93,7 +103,6 @@ const Grocery = (props) => {
                         isVisited={isVisited}
                         visitedStores={storeData}
                         isFetching={isFetching || visitIsFetching}
-                         isLoading={visitIsLoading || newStoreIsLoading}
                     />
                 </CustomContainer>
             )}

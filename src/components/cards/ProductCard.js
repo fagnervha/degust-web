@@ -311,8 +311,6 @@ const ProductCard = (props) => {
           id: `${item?.slug ? item?.slug : item?.id}`,
           module_id: `${getModuleId()}`,
         },
-      }).then(() => {
-        window.scrollTo({ top: 0, behavior: "smooth" }); // ✅ scroll to top after navigation
       });
     } else {
       dispatch({ type: ACTION.setOpenModal, payload: true });
@@ -1157,7 +1155,6 @@ const ProductCard = (props) => {
                     color: theme.palette.neutral[1000],
                     fontSize: "12px",
                     zIndex: "999",
-
                   }}
                   component="h4"
                 >
@@ -1170,7 +1167,7 @@ const ProductCard = (props) => {
                 alt={item?.title}
                 height={horizontalcard?"144":"212"}
                 width={horizontalcard?"131":"195"}
-                objectFit="cover"
+                objectfit="cover"
                 borderRadius="3px"
               />
               {item?.module?.module_type === "food" && (

@@ -342,11 +342,7 @@ const OrderCalculation = (props) => {
 
         {configData?.additional_charge_status === 1 ? (
           <>
-             <Grid item xs={8} sx={{ textTransform: "capitalize",
-               overflow: "hidden",
-               textOverflow: "ellipsis",
-               whiteSpace: "nowrap", // ensures single line
-            }}>
+            <Grid item xs={8} sx={{ textTransform: "capitalize" }}>
               {t(configData?.additional_charge_name)}
             </Grid>
             <Grid item xs={4} align="right">
@@ -465,7 +461,7 @@ const OrderCalculation = (props) => {
                 >
                 {t("Total")}
                 <Typography sx={{marginInlineStart:"5px"}} component="span" fontSize="12px" fontWeight="400" color={theme.palette.primary.main}>
-                  {(taxAmount?.tax_included === 1 )&& ("(Vat/Tax incl.)")}
+                  {taxAmount?.tax_included === 1 && taxAmount?.tax_included!==null && ("(Vat/Tax incl.)")}
                 </Typography>
                 </Typography>
               </Grid>

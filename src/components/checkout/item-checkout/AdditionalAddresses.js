@@ -30,14 +30,11 @@ const AdditionalAddresses = (props) => {
 	);
 	const [house, setHouse] = useState(additionalInformationStates.houseNumber);
 	const [floor, setFloor] = useState(additionalInformationStates.floor);
-
 	useEffect(() => {
-		 setStreet(address?.road || "");
-		 setHouse(address?.house || "");
-		setFloor(address?.floor || " " );
+		address?.road && setStreet(address?.road);
+		address?.house && setHouse(address?.house);
+		address?.floor && setFloor(address?.floor);
 	}, [address?.house, address?.road, address?.floor]);
-
-
 	const handleStreetChange = (e) => {
 		setStreet(e.target.value);
 		additionalInformationDispatch({
@@ -74,7 +71,6 @@ const AdditionalAddresses = (props) => {
 		// 	setAddress({ ...address, road: "", house: "", floor: "" });
 		// };
 	}, [street, house, floor]);
-
 	return (
 		// eslint-disable-next-line react/jsx-no-undef
 		<CustomStackFullWidth>

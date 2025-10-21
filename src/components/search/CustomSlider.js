@@ -68,7 +68,12 @@ const CustomSlider = ({
         onChange={handleChange}
         onChangeCommitted={handleChangeCommitted}
         valueLabelDisplay="auto"
-
+        disabled={
+          priceFilterRange &&
+          (store
+            ? priceFilterRange.min_price === priceFilterRange.max_price
+            : priceFilterRange[0] === priceFilterRange[1])
+        }
         min={min}
         max={max}
         marks={[

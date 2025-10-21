@@ -356,6 +356,7 @@ export const bengali = {
   "Additional Note": "مذكرة إضافية",
   "Only for First Order": "فقط للطلب الأول",
   "Quick Links": "روابط سريعة",
+  "Contact Us": "اتصل بنا",
   "About Us": "معلومات عنا",
   " Loyalty Points": " نقاط الولاء",
   "My account": "حسابي",

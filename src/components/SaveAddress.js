@@ -11,7 +11,6 @@ import AddNewAddress from "./address/add-new-address";
 import { Skeleton } from "@mui/material";
 import AddNewAddressButton from "./address/add-new-address/AddNewAddressButton";
 import { useSelector } from "react-redux";
-import CustomDivider from "components/CustomDivider";
 const SaveAddress = ({
   handleSenderLocation,
   configData,
@@ -48,8 +47,8 @@ const SaveAddress = ({
     setSelectedAddress(adds?.id);
   };
   return (
-    <CustomStackFullWidth paddingX="1rem" paddingBottom="1rem">
-      <Stack direction="row" justifyContent="space-between" alignItems="center" mt="1rem" >
+    <CustomStackFullWidth spacing={2.5}>
+      <Stack direction="row" justifyContent="space-between" alignItems="center">
         <Typography fontWeight="bold">{t("Saved Addresses")}</Typography>
         <AddNewAddressButton parcel="true" />
         {openAddressModal && (
@@ -62,7 +61,6 @@ const SaveAddress = ({
           />
         )}
       </Stack>
-      <CustomDivider border="1px" paddingTop="10px"/>
       <SimpleBar style={{ maxHeight: 130 }}>
         {data?.addresses?.length > 0 &&
           data.addresses?.map((adds, index) => {
@@ -73,7 +71,7 @@ const SaveAddress = ({
                 justifyContent="flex-start"
                 direction="row"
                 spacing={1}
-                sx={{ cursor: "pointer",borderRadius:'10px',mt:"1rem" }}
+                sx={{ cursor: "pointer" }}
                 backgroundColor={
                   adds.id === selectedAddress &&
                   alpha(theme.palette.primary.main, 0.3)

@@ -175,7 +175,7 @@ const SpecialCard = (props) => {
             height={isSmall?140:180}
             alt={item?.name}
             width={210}
-            objectFit="cover"
+            objectfit="cover"
           />
         </Box>
         {item?.halal_tag_status && item?.is_halal ? (

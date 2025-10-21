@@ -39,6 +39,9 @@ const supportedFormatMultiImages = [
 ];
 const IdentityInfo = ({
   deliveryManFormik,
+  identityHandler,
+  identityNumberHandler,
+  handleIdentityImageUpload,
   identityImage,
   setIdentityImage,
   handleFieldChange,
@@ -48,7 +51,12 @@ const IdentityInfo = ({
     typeof identityImage !== "string" &&
       handleFieldChange("identity_image", identityImage);
   }, [identityImage]);
-
+  // const singleFileUploadHandlerForImage = (value) => {
+  //   setIdentityImage(value.currentTarget.files[0]);
+  // };
+  // const imageOnchangeHandlerForImage = (value) => {
+  //   setIdentityImage(value);
+  // };
   const fileImagesHandler = (files) => {
     setIdentityImage(files);
   };
@@ -60,7 +68,6 @@ const IdentityInfo = ({
             <Grid container spacing={3}>
               <Grid item xs={12}>
                 <CustomSelectWithFormik
-                  required
                   selectFieldData={IDENTITY_TYPE}
                   inputLabel={t("Identity Type")}
                   passSelectedValue={(value) => {
@@ -85,7 +92,6 @@ const IdentityInfo = ({
               </Grid>
               <Grid item xs={12}>
                 <CustomTextFieldWithFormik
-                  required
                   placeholder={t("Identity Number")}
                   type="number"
                   label={t("Identity Number")}

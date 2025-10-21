@@ -46,36 +46,27 @@ const CustomSelectWithFormik = (props) => {
           alignItems: "start !important",
           fontSize: "13px",
           fontWeight: "500",
-          "& .MuiFormLabel-asterisk": {
-            color: "red", // 🔴 make asterisk red
-          },
         }}
-        shrink={true} // Keep label always visible
       >
+        {/*{startIcon && (*/}
+        {/*  <InputAdornment position="start" sx={{ mr: 1 }}>*/}
+        {/*    {startIcon}*/}
+        {/*  </InputAdornment>*/}
+        {/*)}*/}
         {inputLabel}
       </InputLabel>
       <Select
         variant="outlined"
         labelId="demo-simple-select-label"
         id="demo-simple-select"
-        value={value || ""} // Ensure empty string when no value
+        value={value}
         label={inputLabel}
         onChange={handleChange}
         error={Boolean(touched && errors)}
         helperText={touched && errors}
-        displayEmpty={true} // Allow empty value to show placeholder
-        renderValue={(selected) => {
-          if (!selected || selected === "") {
-            return (
-              <span style={{ color: theme.palette.text.secondary, opacity: 0.6 }}>
-                {placeholder}
-              </span>
-            );
-          }
-          // Find the label for the selected value
-          const selectedItem = selectFieldData?.find(item => item.value === selected);
-          return selectedItem ? t(selectedItem.label) : selected;
-        }}
+        placeholder={placeholder}
+        displayEmpty
+        renderValue={value !== "" ? undefined : () => placeholder}
         {...fieldProps}
         sx={{
           height: "45px",
@@ -86,13 +77,6 @@ const CustomSelectWithFormik = (props) => {
           },
         }}
       >
-        {/* Optional: Add placeholder as first disabled option */}
-        {placeholder && (
-          <MenuItem value="" disabled sx={{ color: theme.palette.text.secondary }}>
-            {placeholder}
-          </MenuItem>
-        )}
-
         {/* Dynamic options */}
         {selectFieldData?.length > 0 &&
           selectFieldData.map((item, index) => (
@@ -125,11 +109,6 @@ CustomSelectWithFormik.propTypes = {
   passSelectedValue: PropTypes.func.isRequired,
   startIcon: PropTypes.node, // Adding propType for startIcon
   placeholder: PropTypes.string, // Adding propType for placeholder
-  value: PropTypes.any,
-  touched: PropTypes.bool,
-  errors: PropTypes.string,
-  fieldProps: PropTypes.object,
-  required: PropTypes.bool,
 };
 
 export default CustomSelectWithFormik;

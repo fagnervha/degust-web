@@ -4,8 +4,10 @@ import React from "react";
 import {
   CustomStackFullWidth,
   CustomTypographyBold,
-} from "styled-components/CustomStyles.style";
+} from "../../../styled-components/CustomStyles.style";
 import CustomImageContainer from "../../CustomImageContainer";
+import ClickToCall from "../../header/top-navbar/ClickToCall";
+import SendMail from "../../SendMail";
 import Link from "next/link";
 
 const SomeInfo = (props) => {

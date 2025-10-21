@@ -103,7 +103,6 @@ const OwnerForm = ({
             lanDirection={lanDirection}
             height="45px"
             borderRadius="10px"
-            required="true"
           />
         </Grid>
       </Grid>

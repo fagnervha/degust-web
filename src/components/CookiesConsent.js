@@ -54,11 +54,10 @@ const CookiesConsent = ({ text }) => {
         >
           <Typography>{text}</Typography>
           <Stack direction="row" alignItems="center" spacing={2}>
-            <Button id="cookies-deny-btn" variant="outline" color="primary" onClick={handleDeny}>
+            <Button variant="outline" color="primary" onClick={handleDeny}>
               {t("Deny")}
             </Button>
             <Button
-              id="cookies-accept-btn"
               variant="contained"
               color="primary"
               onClick={handleAccept}

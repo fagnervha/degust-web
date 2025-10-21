@@ -224,7 +224,7 @@ const AddNewAddress = (props) => {
                 onClick={getCurrentLocation}
                 sx={{
                   position: "absolute",
-                  bottom: "30%",
+                  bottom: "10%",
                   right: "10px",
                   borderRadius: "50%",
                   color: (theme) => theme.palette.primary.main,

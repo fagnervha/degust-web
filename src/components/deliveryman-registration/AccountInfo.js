@@ -13,6 +13,8 @@ import { formatPhoneNumber } from "utils/CustomFunctions";
 const AccountInfo = ({
   configData,
   deliveryManFormik,
+  phoneNumberHandler,
+  passwordHandler,
   handleFieldChange,
 }) => {
   const theme = useTheme();
@@ -23,7 +25,6 @@ const AccountInfo = ({
       <Grid container spacing={3}>
         <Grid item xs={12} lg={4}>
           <CustomPhoneInput
-            required
             value={deliveryManFormik.values.phone}
             onHandleChange={(value) => {
               handleFieldChange("phone", formatPhoneNumber(value));
@@ -38,7 +39,6 @@ const AccountInfo = ({
         </Grid>
         <Grid item xs={12} lg={4}>
           <CustomTextFieldWithFormik
-            required
             placeholder={t("Password")}
             name="password"
             type="password"
@@ -71,7 +71,6 @@ const AccountInfo = ({
         </Grid>
         <Grid item xs={12} lg={4}>
           <CustomTextFieldWithFormik
-            required
             placeholder={t("Confirm Password")}
             name="confirm_password"
             type="password"
@@ -88,8 +87,22 @@ const AccountInfo = ({
               <InputAdornment position="start">
                 <HttpsIcon
                   sx={{
-
-
+                    // color:
+                    // 	RestaurantJoinFormik
+                    // 		.touched
+                    // 		.max_delivery_time &&
+                    // 	!RestaurantJoinFormik
+                    // 		.errors
+                    // 		.max_delivery_time
+                    // 		? theme.palette
+                    // 				.primary
+                    // 				.main
+                    // 		: alpha(
+                    // 				theme
+                    // 					.palette
+                    // 					.neutral[400],
+                    // 				0.7
+                    // 		  ),
                     fontSize: "18px",
                   }}
                 />

@@ -22,8 +22,7 @@ const StoreRegistration = () => {
   const dispatch = useDispatch();
   const router = useRouter();
   const [resData, setResData] = useState({});
-  const { flag, active ,plan,package:pa} = router.query;
-
+  const { flag, active } = router.query;
   const { allData, activeStep } = useSelector((state) => state.storeRegData);
   const [formValues, setFormValues] = useState({});
   const { mutate, isLoading: regIsloading } = usePostStoreRegistration();
@@ -31,7 +30,6 @@ const StoreRegistration = () => {
 
   const formSubmit = (value) => {
     const tempData = { ...formValues, value };
-
     mutate(tempData, {
       onSuccess: (res) => {
         dispatch(setAllData({ ...allData, res }));
@@ -59,7 +57,6 @@ const StoreRegistration = () => {
 
   const submitBusiness = (values) => {
     dispatch(setAllData({ ...allData, values }));
-
     businessMutate(values, {
       onSuccess: (res) => {
         if (res) {

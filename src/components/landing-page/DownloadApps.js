@@ -27,9 +27,10 @@ const DownloadApps = ({ theme, isSmall, landingPageData }) => {
         fontSize={isSmall ? "12px" : "18px"}
         sx={{ color: (theme) => alpha(theme.palette.neutral[500], 0.8) }}
       >
-       <Typography sx={{fontSize:"16px",textAlign:"justify"}}>
-         {landingPageData?.download_user_app_sub_title}
-       </Typography>
+        <DollarSignHighlighter
+          theme={theme}
+          text={landingPageData?.download_user_app_sub_title}
+        />
       </Typography>
       <AppLinks landingPageData={landingPageData} graybackground />
     </CustomStackFullWidth>

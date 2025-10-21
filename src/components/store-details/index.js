@@ -17,7 +17,7 @@ import CustomModal from "components/modal";
 import RestaurantReviewModal from "components/store-details/ReviewModal";
 import useScrollToTop from "api-manage/hooks/custom-hooks/useScrollToTop";
 
-const StoreDetails = ({ storeDetails, configData }) => {
+const StoreDetails = ({ storeDetails, configData,loading }) => {
   useScrollToTop();
   const dispatch = useDispatch();
   const [expanded, setExpanded] = useState(true);
@@ -110,7 +110,7 @@ const StoreDetails = ({ storeDetails, configData }) => {
     } else {
       return (
         <CustomContainer>
-          <CustomStackFullWidth spacing={3} mt="1rem">
+          <CustomStackFullWidth spacing={3}>
             {storeDetails?.announcement === 1 && (
               <StoreCustomMessage
                 storeAnnouncement={storeDetails?.announcement_message}

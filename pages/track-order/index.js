@@ -12,9 +12,8 @@ const TrackOrder = ({ configData }) => {
     <div>
       <CssBaseline />
       <SEO
-        image={`${configData?.base_urls?.business_logo_url}/${configData?.fav_icon}`}
-        businessName={configData?.business_name}
-        configData={configData}
+      // image={`${configData?.base_urls?.business_logo_url}/${configData?.fav_icon}`}
+      // businessName={configData?.business_name}
       />
       <MainLayout configData={configData}>
         <CustomContainer>

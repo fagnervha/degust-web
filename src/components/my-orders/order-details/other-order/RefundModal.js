@@ -56,9 +56,9 @@ const RefundModal = (props) => {
       customer_note: "",
       identity_image: "",
     },
-    // validationSchema: Yup.object({
-    //   customer_reason: Yup.string().required(t("Please select a reason")),
-    // }),
+    validationSchema: Yup.object({
+      customer_reason: Yup.string().required(t("Please select a reason")),
+    }),
     // validationSchema: ValidationSchemaForRestaurant(),
     onSubmit: async (values, helpers) => {
       try {
@@ -126,19 +126,16 @@ const RefundModal = (props) => {
               <form noValidate onSubmit={RefundRequestFormik.handleSubmit}>
                 <Stack spacing={2}>
                   <CustomStackFullWidth>
-                    {reasonsOption?.length>0 ?(
-                      <CustomSelectWithFormik
-                        selectFieldData={reasonsOption}
-                        inputLabel={t("Select an option")}
-                        passSelectedValue={reasonsHandler}
-                        touched={RefundRequestFormik.touched.customer_reason}
-                        errors={RefundRequestFormik.errors.customer_reason}
-                        fieldProps={RefundRequestFormik.getFieldProps(
-                          "customer_reason"
-                        )}
-                      />
-                    ):null}
-
+                    <CustomSelectWithFormik
+                      selectFieldData={reasonsOption}
+                      inputLabel={t("Select an option")}
+                      passSelectedValue={reasonsHandler}
+                      touched={RefundRequestFormik.touched.customer_reason}
+                      errors={RefundRequestFormik.errors.customer_reason}
+                      fieldProps={RefundRequestFormik.getFieldProps(
+                        "customer_reason"
+                      )}
+                    />
                   </CustomStackFullWidth>
                   <CustomStackFullWidth>
                     <CustomTextFieldWithFormik

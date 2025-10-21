@@ -8,7 +8,6 @@ import {
   onErrorResponse,
   onSingleErrorResponse,
 } from "../../../api-error-response/ErrorResponses";
-import { getModuleId } from "helper-functions/getModuleId";
 
 const getDiscountedItems = async (params) => {
   const { limit, offset, pageParam } = params;
@@ -26,10 +25,8 @@ const getDiscountedItems = async (params) => {
 };
 
 export default function useGetDiscountedItems(params) {
-  return useQuery(["discounted-product",getModuleId(),params?.currentTab], () => getDiscountedItems(params), {
-    enabled: true,
-    staleTime: 60 * 1000,
-    cacheTime: 60 * 1000,
+  return useQuery(["discounted-product"], () => getDiscountedItems(params), {
+    enabled: false,
     onError: onSingleErrorResponse,
   });
 }

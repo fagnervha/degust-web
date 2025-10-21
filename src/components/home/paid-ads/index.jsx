@@ -25,7 +25,9 @@ const PaidAds = () => {
   const isSmall = useMediaQuery(theme.breakpoints.down("sm"));
 
   const { data, isLoading, refetch, isFetched } = useGetAdds();
-
+  useEffect(() => {
+    refetch();
+  }, [getModuleId()]);
 
   const settings = {
     autoplay: true,

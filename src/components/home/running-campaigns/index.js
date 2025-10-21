@@ -24,7 +24,9 @@ const RunningCampaigns = () => {
   const router = useRouter();
   const { runningCampaigns } = useSelector((state) => state.storedData);
   const dispatch = useDispatch();
- 
+  useEffect(() => {
+    refetch();
+  }, []);
   useEffect(() => {
     dispatch(setRunningCampaigns(data));
   }, [data]);
@@ -60,7 +62,7 @@ const RunningCampaigns = () => {
       case ModuleTypes.GROCERY:
         return (
           <Grocery
-            runningCampaigns={data}
+            runningCampaigns={runningCampaigns}
             handleClick={handleClick}
             configData={configData}
             isFetching={isFetching}
@@ -69,7 +71,7 @@ const RunningCampaigns = () => {
       case ModuleTypes.PHARMACY:
         return (
           <Pharmacy
-            runningCampaigns={data}
+            runningCampaigns={runningCampaigns}
             handleClick={handleClick}
             configData={configData}
             isFetching={isFetching}
@@ -78,7 +80,7 @@ const RunningCampaigns = () => {
       case ModuleTypes.ECOMMERCE:
         return (
           <Grocery
-            runningCampaigns={data}
+            runningCampaigns={runningCampaigns}
             handleClick={handleClick}
             configData={configData}
             isFetching={isFetching}
@@ -87,7 +89,7 @@ const RunningCampaigns = () => {
       case ModuleTypes.FOOD:
         return (
           <Grocery
-            runningCampaigns={data}
+            runningCampaigns={runningCampaigns}
             handleClick={handleClick}
             configData={configData}
             isFetching={isFetching}
@@ -101,9 +103,9 @@ const RunningCampaigns = () => {
         <SliderShimmer />
       ) : (
         <>
-          {data?.length > 0 ? (
+          {runningCampaigns?.length > 0 ? (
             <HomeComponentsWrapper alignItems="flex-start">
-              {data?.length > 0 && (
+              {runningCampaigns?.length > 0 && (
                 <H2 text="Just For You" textAlign="left" component="h2" />
               )}
               <Box sx={{ width: "100%", mt: "1rem" }}>
@@ -121,7 +123,6 @@ const RunningCampaigns = () => {
           imageBaseUrl={imageBaseUrl}
           open={openModal}
           handleModalClose={handleClose}
-          productUpdate
         />
       )}
     </>

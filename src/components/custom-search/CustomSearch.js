@@ -84,7 +84,6 @@ const CustomSearch = ({
       return (
         <>
           <StyledInputBase
-          id="search-input"
             placeholder={t(label)}
             value={value}
             onChange={(e) => handleChange(e.target.value)}

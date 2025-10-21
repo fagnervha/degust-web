@@ -29,19 +29,19 @@ import { useDispatch } from "react-redux";
 import { setOpenForgotPasswordModal } from "redux/slices/utils";
 
 const SignInForm = ({
-                      loginFormik,
-                      configData,
-                      handleOnChange,
-                      passwordHandler,
-                      rememberMeHandleChange,
-                      isApiCalling,
-                      isLoading,
-                      handleSignUp,
-                      only,
-                      handleClick,
-                      handleClose,
-                      isRemember,
-                    }) => {
+  loginFormik,
+  configData,
+  handleOnChange,
+  passwordHandler,
+  rememberMeHandleChange,
+  isApiCalling,
+  isLoading,
+  handleSignUp,
+  only,
+  handleClick,
+  handleClose,
+                      isRemember
+}) => {
   const lanDirection = getLanguage() ? getLanguage() : "ltr";
 
   const theme = useTheme();
@@ -61,7 +61,7 @@ const SignInForm = ({
   }, [loginFormik.values.email_or_phone]);
 
   return (
-    <form noValidate onSubmit={loginFormik.handleSubmit} id="signin-form">
+    <form noValidate onSubmit={loginFormik.handleSubmit}>
       <CustomStackFullWidth alignItems="center">
         <CustomStackFullWidth
           spacing={{ xs: 2, md: 3 }}
@@ -69,7 +69,6 @@ const SignInForm = ({
         >
           {isPhone === "phone" ? (
             <CustomPhoneInputManual
-              id="signin-phone-input"
               value={loginFormik.values.email_or_phone}
               onHandleChange={handleOnChange}
               initCountry={configData?.country}
@@ -82,7 +81,6 @@ const SignInForm = ({
             />
           ) : (
             <CustomTextFieldWithFormik
-              id="signin-email-input"
               autoFocus={isPhone === "email" && true}
               required
               label={t("Email/Phone")}
@@ -107,14 +105,8 @@ const SignInForm = ({
               }
             />
           )}
-  {/* <TextField
-        id="email-input" // 👈 unique id
-        label="Email"
-        variant="outlined"
-        fullWidth
-      /> */}
+
           <CustomTextFieldWithFormik
-            id="signin-password-input"
             height="45px"
             required="true"
             type="password"
@@ -149,7 +141,6 @@ const SignInForm = ({
             <FormControlLabel
               control={
                 <Checkbox
-                  id="signin-remember-checkbox"
                   value="remember"
                   color="primary"
                   onChange={rememberMeHandleChange}
@@ -163,11 +154,10 @@ const SignInForm = ({
               }
             />
             <CustomLink
-              id="signin-forgot-password-link"
-              onClick={() => {
-                dispatch(setOpenForgotPasswordModal(true));
-                handleClose();
-              }}
+             onClick={()=>{
+              dispatch(setOpenForgotPasswordModal(true))
+              handleClose()
+             }}
               sx={{ fontWeight: "400", fontSize: "14px" }}
             >
               {t("Forgot password?")}
@@ -175,10 +165,10 @@ const SignInForm = ({
           </CustomStackFullWidth>
           <CustomStackFullWidth sx={{ paddingBottom: "5px" }}>
             <CustomColouredTypography
-              id="signin-terms-link"
               onClick={handleClick}
               sx={{
                 cursor: "pointer",
+                // textDecoration: 'underline',
                 fontWeight: "400",
                 fontSize: "12px",
                 [theme.breakpoints.down("sm")]: {
@@ -197,19 +187,22 @@ const SignInForm = ({
                   fontSize: "12px",
                 }}
               >
-                {t("Terms & Conditions")}
+                {t(" Terms & Conditions")}
               </Typography>
             </CustomColouredTypography>
           </CustomStackFullWidth>
-
+          {/*<AcceptTermsAndConditions*/}
+          {/*  handleCheckbox={handleCheckbox}*/}
+          {/*  formikType={loginFormik}*/}
+          {/*/>*/}
           <CustomStackFullWidth spacing={2}>
             <LoadingButton
-              id="signin-submit-button"
               type="submit"
               fullWidth
               variant="contained"
               loading={isLoading}
               sx={{ color: textColor }}
+              id="recaptcha-container"
             >
               {t("Sign In")}
             </LoadingButton>
@@ -226,7 +219,6 @@ const SignInForm = ({
                     {t("Don't have an account?")}
                   </CustomTypography>
                   <span
-                    id="signin-signup-link"
                     onClick={handleSignUp}
                     style={{
                       color: theme.palette.primary.main,

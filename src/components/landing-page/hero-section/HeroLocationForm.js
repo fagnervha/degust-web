@@ -336,14 +336,12 @@ const HeroLocationForm = () => {
                       {!isSelectedByGps && (
                         <>
                           <GpsFixedIcon
-                            id="gps-locate-icon"
                             onClick={handleAgreeLocation}
                             sx={{ fontSize: { xs: "20px", sm: "18px" } }}
                           />
 
                           {!isXSmall && (
                             <Typography
-                              id="locate-me-text"
                               variant={isXSmall ? "body3" : "body1"}
                               onClick={handleAgreeLocation}
                               sx={{
@@ -441,7 +439,7 @@ const HeroLocationForm = () => {
                           width: "150px",
                         }}
                       >
-                        <MapIcon id="pick-from-map-icon" sx={{ fontSize: "18px" }} />
+                        <MapIcon sx={{ fontSize: "18px" }} />
                         <Typography
                           id={`${divId}-pick-from-map`}
                           variant={isXSmall ? "body3" : "body1"}
@@ -460,7 +458,6 @@ const HeroLocationForm = () => {
             <Grid item xs={2} sm={2.1}>
               {isXSmall ? (
                 <IconButton
-                  id="hero-location-icon"
                   onClick={handleOpen}
                   sx={{
                     borderRadius: "5px",
@@ -477,7 +474,6 @@ const HeroLocationForm = () => {
                 </IconButton>
               ) : (
                 <StyledButton
-                  id="hero-explore-button"
                   sx={{
                     height: "100%",
                     width: "100%",

@@ -17,7 +17,6 @@ import ReceiverInfoFrom from "./ReceiverInfoFrom";
 import SenderInfoForm from "./SenderInfoForm";
 import ValidationSchema from "./ValidationSchema";
 import dynamic from "next/dynamic";
-import { formatPhoneNumber } from "utils/CustomFunctions";
 const AuthModal = dynamic(() => import("components/auth/AuthModal"));
 const PercelDelivery = ({ configData }) => {
   const router = useRouter();
@@ -58,14 +57,14 @@ const PercelDelivery = ({ configData }) => {
         : "",
       senderPhone: token
         ? profileInfo?.phone
-          ? formatPhoneNumber(profileInfo?.phone)
+          ? profileInfo?.phone
           : ""
         : parcelInfo?.senderPhone
-        ? formatPhoneNumber(parcelInfo?.senderPhone)
+        ? parcelInfo?.senderPhone
         : "",
       senderEmail: profileInfo? profileInfo?.email:parcelInfo?.senderEmail ? parcelInfo?.senderEmail : "",
       receiverName: parcelInfo?.receiverName ? parcelInfo?.receiverName : "",
-      receiverPhone: parcelInfo?.receiverPhone ? formatPhoneNumber(parcelInfo?.receiverPhone) : "",
+      receiverPhone: parcelInfo?.receiverPhone ? parcelInfo?.receiverPhone : "",
       receiverEmail: parcelInfo?.receiverEmail ? parcelInfo?.receiverEmail : "",
       senderRoad: parcelInfo?.senderRoad ? parcelInfo?.senderRoad : "",
       senderHouse: parcelInfo?.senderHouse ? parcelInfo?.senderHouse : "",
@@ -90,7 +89,7 @@ const PercelDelivery = ({ configData }) => {
   useEffect(() => {
     addAddressFormik.setFieldValue(
       "senderPhone",
-      profileInfo?.phone ? formatPhoneNumber(profileInfo?.phone) : formatPhoneNumber(parcelInfo?.senderPhone)
+      profileInfo?.phone ? profileInfo?.phone : parcelInfo?.senderPhone
     );
   }, [profileInfo?.phone]);
 

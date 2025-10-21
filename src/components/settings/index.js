@@ -16,7 +16,6 @@ const CustomPaper = styled(Paper)(({ theme }) => ({
   marginLeft: "auto",
   marginRight: "auto",
   justifyContent: "center",
-  backgroundColor: theme.palette.background.custom,
 }));
 
 const CustomSettings = (props) => {
