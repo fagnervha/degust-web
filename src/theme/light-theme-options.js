@@ -32,7 +32,7 @@ const background = {
 const divider = "#E6E8F0";
 
 const primary = {
-	main: "#fe5900",
+	main: "#039D55",
 	deep: "#026034",
 	light: "#EBFDF2",
 	dark: "#1c6641",
@@ -43,7 +43,7 @@ const primary = {
 	customType3: "#29CE00",
 	overLay: "#000000",
 	lite: "rgba(3, 157, 85, 0.1)",
-	icon: "#FE5900",
+	icon: "#039D55",
 };
 const moduleTheme = {
 	pharmacy: "#039D55",
@@ -97,7 +97,7 @@ const error = {
 };
 
 const text = {
-	primary: "#FE5900",
+	primary: "#3E594D",
 	secondary: "#93A2AE",
 	disabled: "rgba(55, 65, 81, 0.48)",
 	custom: "#3F3F3F",
@@ -134,6 +134,7 @@ const toolTipColor = neutral[1000];
 
 export const lightThemeOptions = {
 	components: {
+		 MuiUseMediaQuery: { defaultProps: { noSsr: true } }, // ⚡ Fix hydration
 		MuiAvatar: {
 			styleOverrides: {
 				root: {
